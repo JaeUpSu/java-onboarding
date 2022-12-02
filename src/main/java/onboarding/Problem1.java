@@ -38,7 +38,7 @@ class Problem1 {
 
     private static int getPageScore(Integer pageNumber) {
         int plusScore = getPlus(pageNumber);
-        int multipleScore = 0;//getMultiple(pageNumber);
+        int multipleScore = getMultiple(pageNumber);
 
         int max = Math.max(plusScore, multipleScore);
 
@@ -57,6 +57,17 @@ class Problem1 {
         return answer;
     }
 
+    private static int getMultiple(Integer pageNumber) {
+        int answer = 1;
+        String pageValue = String.valueOf(pageNumber);
+
+        for (int i = 0; i < pageValue.length(); i++) {
+            int value = Character.getNumericValue(pageValue.charAt(i));
+            answer *= value;
+        }
+
+        return answer;
+    }
 
     private static void validatePages(List<Integer> player) {
         int difference = player.get(1) - player.get(0);
