@@ -15,8 +15,8 @@ class Problem1 {
     }
 
     private static int getPageGameResult(List<Integer> pobi, List<Integer> crong) {
-        int pobiScore = 0; //getPlayerScore(pobi);
-        int crongScore = 9; //getPlayerScore(crong);
+        int pobiScore = getPlayerScore(pobi);
+        int crongScore = getPlayerScore(crong);
 
         if (pobiScore > crongScore) {
             return 1;
@@ -25,6 +25,15 @@ class Problem1 {
         }
 
         return 0;
+    }
+
+    private static Integer getPlayerScore(List<Integer> player) {
+        int left = 0;//getPageScore(player.get(0));
+        int right = 0;//getPageScore(player.get(1));
+
+        int max = Math.max(left, right);
+
+        return max;
     }
 
     private static void validatePages(List<Integer> player) {
