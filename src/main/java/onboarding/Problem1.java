@@ -28,10 +28,19 @@ class Problem1 {
     }
 
     private static Integer getPlayerScore(List<Integer> player) {
-        int left = 0;//getPageScore(player.get(0));
-        int right = 0;//getPageScore(player.get(1));
+        int left = getPageScore(player.get(0));
+        int right = getPageScore(player.get(1));
 
         int max = Math.max(left, right);
+
+        return max;
+    }
+
+    private static int getPageScore(Integer pageNumber) {
+        int plusScore = 0;//getPlus(pageNumber);
+        int multipleScore = 0;//getMultiple(pageNumber);
+
+        int max = Math.max(plusScore, multipleScore);
 
         return max;
     }
