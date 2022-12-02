@@ -8,9 +8,20 @@ class Problem1 {
             validatePages(pobi);
             validatePages(crong);
 
-        //    return getPageGameResult(pobi, crong);
+            return getPageGameResult(pobi, crong);
         } catch (IllegalArgumentException e) {
             return -1;
+        }
+    }
+
+    private static int getPageGameResult(List<Integer> pobi, List<Integer> crong) {
+        int pobiScore = 0; //getPlayerScore(pobi);
+        int crongScore = 9; //getPlayerScore(crong);
+
+        if (pobiScore > crongScore) {
+            return 1;
+        } else if (pobiScore < crongScore) {
+            return 2;
         }
 
         return 0;
