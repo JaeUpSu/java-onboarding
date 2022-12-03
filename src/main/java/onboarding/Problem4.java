@@ -6,6 +6,7 @@ public class Problem4 {
     private static final Character UPPER_END_ALPHA = 'Z';
     private static final Character LOWER_START_ALPHA = 'a';
     private static final Character LOWER_END_ALPHA = 'z';
+
     public static String solution(String word) {
         String answer = getReverseGame(word);
         return answer;
