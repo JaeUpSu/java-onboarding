@@ -24,9 +24,21 @@ public class Problem4 {
         if (alpha.equals(BLANK)) {
             return String.valueOf(alpha);
         }
+        if (isUpperAlpha(alpha)) {
+            return getReverse(alpha, UPPER_START_ALPHA, UPPER_END_ALPHA);
+        }
 
-        // getReverse(alpha)
+        return getReverse(alpha, LOWER_START_ALPHA, LOWER_END_ALPHA);
+    }
 
-        return "";
+    private static String getReverse(Character alpha, Character start, Character end) {
+        int difference = alpha - start;
+        return String.valueOf((char) (end - difference));
+    }
+    private static boolean isUpperAlpha(Character alpha) {
+        if (UPPER_START_ALPHA <= alpha && UPPER_END_ALPHA >= alpha) {
+            return true;
+        }
+        return false;
     }
 }
